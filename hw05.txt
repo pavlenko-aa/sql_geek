@@ -1,0 +1,24 @@
+Практическое задание по теме «Операторы, фильтрация, сортировка и ограничение»
+
+Задание 1:
+update users set created_at = now();
+update users set updated_at = now();
+
+Задание 2:
+alter table users modify created_at datetime;
+alter table users modify updated_at datetime;
+
+Задание 3:
+select value from example.storehouses_products order by value = 0, value
+
+Практическое задание по теме «Агрегация данных»
+
+Задание 1:
+select round (avg(timestampdiff(year, birthday_at, now())), 2) as "Средний возраст"
+from users;
+
+Задание 2:
+select count(*) as "Количество дней рождений",
+ date_format(date_format(birthday_at, '%d.%m.2020'), '%W') as weekday
+ from users
+ group by weekday;
